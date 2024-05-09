@@ -8,7 +8,7 @@ export type DeleteTagInputDto = {
 export type DeleteTagOutputDto = void
 
 export class DeleteTagUseCase implements UseCase<DeleteTagInputDto, DeleteTagOutputDto> {
-
+    
     private constructor(private readonly tagGateway: TagGateway) {}
 
     public static create(tagGateway: TagGateway) {
@@ -16,14 +16,14 @@ export class DeleteTagUseCase implements UseCase<DeleteTagInputDto, DeleteTagOut
     }
 
     public async execute({id}: DeleteTagInputDto): Promise<DeleteTagOutputDto> {
+        const aTag = await this.tagGateway.find(id)
+
+        if (!aTag) {
+            throw new Error("Tag not found")
+        }
+
         await this.tagGateway.delete(id)
 
-        const output = this.presentOutPut()
-
-        return output
-    }
-
-    private presentOutPut(): DeleteTagOutputDto {
         return
     }
     
