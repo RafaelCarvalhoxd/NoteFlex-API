@@ -17,7 +17,7 @@ export class CreateTaskUseCase implements UseCase<CreateTaskInputDto, CreateTask
 
     private constructor(private readonly taskGateway: TaskGateway) {}
 
-    public static create(taskGateway: TaskGateway): CreateTaskUseCase {
+    public static create(taskGateway: TaskGateway){
         return new CreateTaskUseCase(taskGateway);
     }
 

@@ -11,7 +11,7 @@ export class DeleteTaskUseCase implements UseCase<DeleteTaskInputDto, DeleteTask
 
     private constructor(private readonly taskGateway: TaskGateway) {}
 
-    public static create(taskGateway: TaskGateway): DeleteTaskUseCase {
+    public static create(taskGateway: TaskGateway){
         return new DeleteTaskUseCase(taskGateway);
     }
 
