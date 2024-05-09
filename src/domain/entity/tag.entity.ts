@@ -25,7 +25,7 @@ export class Tag {
         return this.prop.name;
     }
 
-    updateName (name: string) {
+    edit (name: string) {
         this.prop.name = name;
     }
 }
