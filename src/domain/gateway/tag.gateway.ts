@@ -1,9 +1,9 @@
-import { TagProps } from "../entity/tag.entity";
+import { Tag } from "../entity/tag.entity";
 
 export interface TagGateway {
-    save(tag: TagProps): Promise<void>
-    list(): Promise<TagProps[]>
-    find(id: string): Promise<TagProps | null>
+    save(tag: Tag): Promise<void>
+    list(): Promise<Tag[]>
+    find(id: string): Promise<Tag | null>
     delete(id: string): Promise<void>
-    update(tag: TagProps): Promise<void>
+    update(tag: Tag): Promise<void>
 }

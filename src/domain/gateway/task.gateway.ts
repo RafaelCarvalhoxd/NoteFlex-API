@@ -1,9 +1,9 @@
-import { TaskProps } from "../entity/task.entity";
+import { Task } from "../entity/task.entity";
 
 export interface TaskGateway {
-    save(task: TaskProps): Promise<void>
-    list(): Promise<TaskProps[]>
-    find(id: string): Promise<TaskProps | null>
+    save(task: Task): Promise<void>
+    list(): Promise<Task[]>
+    find(id: string): Promise<Task | null>
     delete(id: string): Promise<void>
-    update(task: TaskProps): Promise<void>
+    update(task: Task): Promise<void>
 }
