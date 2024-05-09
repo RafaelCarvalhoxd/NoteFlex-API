@@ -4,7 +4,7 @@ export type TaskProps = {
     id: string;
     title: string;
     description: string;
-    status: 'open' | 'done';
+    status: 'open' | 'done' | 'in-progress' | 'to-do';
     tag: TagProps
     createAt: Date;
     updateAt: Date;
@@ -66,6 +66,16 @@ export class Task {
 
     done() {
         this.prop.status = 'done';
+        this.prop.updateAt = new Date();
+    }
+
+    inProgress() {
+        this.prop.status = 'in-progress';
+        this.prop.updateAt = new Date();
+    }
+
+    toDo() {
+        this.prop.status = 'to-do';
         this.prop.updateAt = new Date();
     }
 
