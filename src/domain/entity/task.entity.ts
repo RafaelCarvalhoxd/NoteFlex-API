@@ -4,7 +4,7 @@ export type TaskProps = {
     id: string;
     title: string;
     description: string;
-    status: 'open' | 'done' | 'in-progress' | 'to-do';
+    status: string;
     tag: TagProps
     createAt: Date;
     updateAt: Date;
