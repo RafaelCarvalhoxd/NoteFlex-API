@@ -27,7 +27,5 @@ model tag {
   @@map("tags")
   id String @id
   name String
-  createAt DateTime
-  updateAt DateTime
   tasks Task[]
 }
