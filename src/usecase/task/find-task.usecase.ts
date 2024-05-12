@@ -12,7 +12,7 @@ export type FindTaskOutputDto = {
     title: string;
     description: string;
     status: string;
-    tag: TagProps
+    tag?: TagProps
     createAt: Date;
     updateAt: Date;
 }
