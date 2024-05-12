@@ -5,7 +5,7 @@ export type TaskProps = {
     title: string;
     description: string;
     status: string;
-    tag: TagProps
+    tag?: TagProps
     createAt: Date;
     updateAt: Date;
 };
@@ -13,13 +13,13 @@ export type TaskProps = {
 export class Task {
     private constructor(private prop: TaskProps) {}
 
-    public static create(title: string, description: string, tag: TagProps) {
+    public static create(title: string, description: string, tagId: TagProps) {
         return new Task({
             id: crypto.randomUUID().toString(),
             title,
             description,
             status: 'open',
-            tag,
+            tag: tagId,
             createAt: new Date(),
             updateAt: new Date(),
         });
