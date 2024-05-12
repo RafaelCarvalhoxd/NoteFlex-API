@@ -19,8 +19,10 @@ model Task {
   title String
   description String
   status String
-  tag tag @relation(fields: [tagId], references: [id])
-  tagId String
+  tagId tag @relation(fields: [tag], references: [id])
+  tag String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
 
 model tag {
